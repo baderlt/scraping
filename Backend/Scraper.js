@@ -37,10 +37,9 @@ const googleSearch=async(req,res)=>{
     // await page.type('input[name="q"]', query);
     await page.keyboard.press('Enter');
     await page.waitForSelector('html');
-    let date=new Date().toISOString().replace(/[:.]/g, '-');
-    let path='screenshot'+date+'.png';
-    await page.screenshot({path });
-
+    // let date=new Date().toISOString().replace(/[:.]/g, '-');
+    // let path='screenshot'+date+'.png';
+    // await page.screenshot({path });
     let html = await page.evaluate(() => {
       const results = document.querySelectorAll('body');
       return Array.from(results, (result) => result.textContent);
