@@ -17,11 +17,15 @@ import puppeteer from 'puppeteer';
 const Writer=(emails)=>{
     let date=new Date().toISOString().replace(/[:.]/g, '-');
     const outputPath = 'output'+date+'.txt';
+    if(emails.length > 0){
     const writeStream = fs.createWriteStream(outputPath, { flags: 'a' });
     emails.forEach((email) => {
         writeStream.write(email + '\n', 'utf8');
       });
       writeStream.end();
+      return true;
+    };
+return false;
 }
 
 const googleSearch=async(req,res)=>{

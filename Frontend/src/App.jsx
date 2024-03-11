@@ -27,30 +27,34 @@ seteamils(response.resultat)
   }
 
   const handelScraping=()=>{
-    const url_regex=/^https:\/\/(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[^\s]*)?$/;
-    if(url_regex.test(url.current.value)){
+    // const url_regex=/^https:\/\/(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/[^\s]*)?$/;
+    // if(url_regex.test(url.current.value)){
       Start_Scarping();
       return true;
-  }else{
-    alert('Type a valide Url like https://www.scraping.com ');
-  }
+  // }else{
+  //   alert('Type a valide Url like https://www.scraping.com ');
+  // }
   }
   return (
     <>
       
-   
+ 
      
-      <h1>Emails Scarper </h1>
-      <div className="card">
-        <input id='url' ref={url} type="text" placeholder='type Url ...' />
+      <h1 className=''>Emails Scarper </h1>
+      <div className="card ">
+        <div className='flex flex-row'>       
+         <span className='w-16 bg-black rounded text-center flex justify-center items-center' > <img src="lien.png" alt="line" width={30} height={30} /></span><input id='url' ref={url} type="text" placeholder=' type Url ...' />
+        
+        </div>
         <button onClick={handelScraping}>
    Start Scraping 
         </button>
+     
 
       </div>
  
-      <div style={{position:'relative'}}>     
-        {loading ? <Loding_Emails/> : <ListeEmails/>}
+      <div className='relative mt-10'>     
+        {loading ? <Loding_Emails/> : <ListeEmails Emails={Emails}/>}
         </div>
  
 
