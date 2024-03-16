@@ -36,7 +36,6 @@ const googleSearch=async(req,res)=>{
     const browser = await puppeteer.launch({ headless: true }); // Set headless to true for a headless browser
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'domcontentloaded' });
-  
     // Type the search query
     // await page.type('input[name="q"]', query);
     await page.keyboard.press('Enter');
