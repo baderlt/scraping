@@ -1,7 +1,7 @@
 import { useState } from "react";
 import download_file from "./Download_file";
 
-const ListeEmails=({Emails})=>{
+const ListeEmails=({Emails,filename})=>{
 const [copy,setcopy]=useState(false);
     const Copy_Emails=()=>{
 
@@ -23,7 +23,7 @@ return (
         
         return <p key={index} className="flex"><span className="index-email  text-gray-500">{index}</span>&ensp;&ensp;<p className="email" >{email}</p> </p>;
 })}
-<button className="rounded-lg bg-green-700 " onClick={download_file}>Download</button>
+<button className="rounded-lg bg-green-700 " onClick={()=>download_file(filename)}>Download</button>
 </div>
  : <h2 className="text-xl">No Email Found .. !</h2>}
     </>

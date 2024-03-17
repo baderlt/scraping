@@ -53,7 +53,7 @@ function App() {
       </div>
 
       <div className="relative mt-10">
-        {loading ? <Loding_Emails /> : <ListeEmails Emails={Emails} />}
+        {loading ? <Loding_Emails /> : <ListeEmails filename={filename} Emails={Emails} />}
       </div>
     </>
   );
