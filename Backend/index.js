@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.post('/api/EmailScraping',googleSearch);
-app.get('/api/download',download)
+app.get('/api/download-file/{file}',download)
 
 app.listen(PORT,(req,res)=>{
     console.log(`server runing on port:${PORT} `)
