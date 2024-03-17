@@ -18,10 +18,10 @@ const Writer=(emails)=>{
 try{
     let date=new Date().toISOString().replace(/[:.]/g, '-');
    outputPath = 'output'+date+'.txt';
-  
+
     if(emails.size > 0){
       console.log(outputPath);
-    const writeStream = fs.createWriteStream(outputPath, { flags: 'a' });
+    const writeStream = fs.createWriteStream(`files/${outputPath}`, { flags: 'a' });
     emails.forEach((email) => {
         writeStream.write(email + '\n', 'utf8');
       });

@@ -1,7 +1,7 @@
 import fs from 'fs';
-import http from 'http';
+
 const download=(req,res)=>{
-    const filePath = path.join(__dirname, `${req.file}`);
+    const filePath = path.join(__dirname, `files/${req.file}`);
     const stat = fs.statSync(filePath);
 
     res.writeHead(200, {
