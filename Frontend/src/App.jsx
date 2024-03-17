@@ -18,6 +18,7 @@ try{
  const res =await axios.post(`${BaseUrl}/EmailScraping`,body);
  const  response= await res.data;
  if(response){
+  console.log(response);
 seteamils(response.resultat)
   setLoding(false);
  }

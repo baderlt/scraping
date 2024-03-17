@@ -1,17 +1,16 @@
 import fs from 'fs';
 import http from 'http';
 const download=(req,res)=>{
-    console.log('donload stated ');
-    const file=fs.createWriteStream('output2024-03-09T21-34-24-002Z.png')
-    const request = http.get("http://i3.ytimg.com/vi/J---aiyznGQ/mqdefault.jpg", function(response) {
-   response.pipe(file);
+    const filePath = path.join(__dirname, `${req.file}`);
+    const stat = fs.statSync(filePath);
 
-   // after download completed close filestream
-   file.on("finish", () => {
-       file.close();
-     return res.status(200).json({message:"Download Completed"});
-    })
-});
+    res.writeHead(200, {
+        'Content-Type': 'text/plain',
+        'Content-Length': stat.size
+    });
+
+    const readStream = fs.createReadStream(filePath);
+    readStream.pipe(res);
 }
 
 export default download;

@@ -1,7 +1,7 @@
 import  Cheerio  from "cheerio";
 import fs from "fs";
 import puppeteer from 'puppeteer';
-
+let outputPath='';
 ///////// scrape emails from html 
   const ScrapEmails=(html)=>{
     const $ = Cheerio.load(html);
@@ -16,7 +16,7 @@ import puppeteer from 'puppeteer';
   /////// create file and write the emails scraped
 const Writer=(emails)=>{
     let date=new Date().toISOString().replace(/[:.]/g, '-');
-    const outputPath = 'output'+date+'.txt';
+   outputPath = 'output'+date+'.txt';
     if(emails.length > 0){
     const writeStream = fs.createWriteStream(outputPath, { flags: 'a' });
     emails.forEach((email) => {
@@ -55,7 +55,7 @@ const googleSearch=async(req,res)=>{
     // Close the browser
     await browser.close();
 
-  return res.status(200).json({message:'success',resultat:emails});
+  return res.status(200).json({message:'success',resultat:emails,file:outputPath});
 
 }catch(e){
     res.status(500).json({message:'Server Error ty again ..!'})
