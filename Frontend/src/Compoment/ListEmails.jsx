@@ -22,6 +22,7 @@ return (
         
         return <p key={index} className="flex"><span className="index-email  text-gray-500">{index}</span>&ensp;&ensp;<p className="email" >{email}</p> </p>;
 })}
+<button className="rounded-lg bg-green-500 ">Download</button>
 </div>
  : <h2 className="text-xl">No Email Found .. !</h2>}
     </>

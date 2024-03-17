@@ -15,9 +15,11 @@ let outputPath='';
 
   /////// create file and write the emails scraped
 const Writer=(emails)=>{
+try{
     let date=new Date().toISOString().replace(/[:.]/g, '-');
    outputPath = 'output'+date+'.txt';
-    if(emails.length > 0){
+    if(emails){
+      console.log(outputPath);
     const writeStream = fs.createWriteStream(outputPath, { flags: 'a' });
     emails.forEach((email) => {
         writeStream.write(email + '\n', 'utf8');
@@ -26,6 +28,9 @@ const Writer=(emails)=>{
       return true;
     };
 return false;
+  }catch(e){
+    console.log(e);
+  }
 }
 
 const googleSearch=async(req,res)=>{
