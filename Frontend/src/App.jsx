@@ -50,12 +50,12 @@ function App() {
      <Toaster />
       <h1 className="">Emails Scarper </h1>
       <div className="card ">
-        <div className="flex flex-row">
+        <div className="flex flex-row w-full">
           <span className="w-16 bg-black rounded text-center flex justify-center items-center">
             {" "}
             <img src="lien.png" alt="line" width={30} height={30} />
           </span>
-          <input id="url" ref={url} type="text" placeholder=" type Url ..." />
+          <input id="url" className="w-full" ref={url} type="text" placeholder=" type Url ..." />
         </div>
         <button onClick={handelScraping}>Start Scraping</button>
       </div>
