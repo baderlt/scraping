@@ -4,8 +4,11 @@ import path from "path";
 
 const download = (req, res) => {
   const { file } = req.params;
+  /// get the current path
   const __filename = fileURLToPath(import.meta.url);
+  /// get the current diroctory
   const __dirname = path.dirname(__filename);
+
 
   const filePath = path.join(__dirname, "files", file);
   const stat = fs.statSync(filePath);
