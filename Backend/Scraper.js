@@ -38,7 +38,7 @@ const googleSearch=async(req,res)=>{
     try{
     if(! req.body?.url) return res.status(400).json({message:'Url Not Found .. !'});
     const { url }=req.body;
-    const browser = await puppeteer.launch({ headless: false }); // Set headless to true for a headless browser
+    const browser = await puppeteer.launch({ headless: true }); // Set headless to true for a headless browser
     const page = await browser.newPage();
     await page.goto(url, { waitUntil: 'domcontentloaded' });
     // Type the search query
