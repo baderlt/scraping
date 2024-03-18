@@ -1,17 +1,22 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import axios from "axios";
 import { BaseUrl } from "./touls";
 import Loding_Emails from "./Loading/loading_emails";
 import ListeEmails from "./Compoment/ListEmails";
+import toast, { Toaster } from 'react-hot-toast';
+const success = () =>toast.success('Successfully scraping');
+const error = () =>toast.error('Server Error Try Again .. !');
 
 function App() {
+
   const url = useRef();
   const [Emails, seteamils] = useState([]);
   const [filename, setfilename] = useState("");
   const [loading, setLoding] = useState(false);
 
   const Start_Scarping = async () => {
+
     try {
       setLoding(true);
       let body = { url: url.current.value };
@@ -22,8 +27,10 @@ function App() {
         setLoding(false);
         seteamils(response.resultat);
         setfilename(response.file);
+        success();
       }
     } catch (e) {
+      error();
       setLoding(false);
       console.log(e);
     }
@@ -40,6 +47,7 @@ function App() {
   };
   return (
     <>
+     <Toaster />
       <h1 className="">Emails Scarper </h1>
       <div className="card ">
         <div className="flex flex-row">
@@ -55,8 +63,10 @@ function App() {
       <div className="relative mt-10">
         {loading ? <Loding_Emails /> : <ListeEmails filename={filename} Emails={Emails} />}
       </div>
+
     </>
   );
 }
 
 export default App;
+
