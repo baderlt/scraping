@@ -20,7 +20,6 @@ try{
    outputPath = 'output'+date+'.txt';
 
     if(emails.size > 0){
-      console.log(outputPath);
     const writeStream = fs.createWriteStream(`files/${outputPath}`, { flags: 'a' });
     emails.forEach((email) => {
         writeStream.write(email + '\n', 'utf8');

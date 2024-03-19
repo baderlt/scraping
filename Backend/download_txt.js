@@ -9,7 +9,6 @@ const download = (req, res) => {
   /// get the current diroctory
   const __dirname = path.dirname(__filename);
 
-
   const filePath = path.join(__dirname, "files", file);
   const stat = fs.statSync(filePath);
 
