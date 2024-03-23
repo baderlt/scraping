@@ -12,7 +12,6 @@ app.post('/api/EmailScraping',googleSearch);
 app.get('/api/downloadfile/:file',download)
 app.get('/api/test',(req,res)=>{
     res.send('Hi ');
-    
 })
 app.listen(PORT,(req,res)=>{
     console.log(`server runing on port:${PORT} `)
