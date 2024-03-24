@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import googleSearch from './Scraper.js';
 import download from './download_txt.js';
-import { launch } from 'chrome-launcher';
 
 const PORT=process.env.PORT || 5000 
 dotenv.config();
