@@ -14,12 +14,7 @@ app.post('/api/EmailScraping',googleSearch);
 app.get('/api/downloadfile/:file',download)
 app.get('/api/test',async (req,res)=>{
 
-
-    const chrome = await launch({
-        startingUrl: 'https://google.com'
-    });
-    console.log('Chrome debuggable on port:', chrome.port);
-    console.log('Executable path:', chrome.executablePath);
+res.send('Hi ,welcom ');
 
 })
 app.listen(PORT,(req,res)=>{
