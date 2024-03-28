@@ -33,6 +33,8 @@ return false;
   }
 }
 
+
+////function for scraping emails with pappeter 
 const googleSearch=async(req,res)=>{
 
     try{
@@ -47,7 +49,7 @@ const googleSearch=async(req,res)=>{
     // await page.type('input[name="q"]', query);
     await page.keyboard.press('Enter');
     await page.waitForSelector('html');
-    
+
     // let date=new Date().toISOString().replace(/[:.]/g, '-');
     // let path='screenshot'+date+'.png';
     // await page.screenshot({path });
