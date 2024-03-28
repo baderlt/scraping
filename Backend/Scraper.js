@@ -2,6 +2,8 @@ import  Cheerio  from "cheerio";
 import fs from "fs";
 import puppeteer from 'puppeteer';
 let outputPath='';
+
+
 ///////// scrape emails from html 
   const ScrapEmails=(html)=>{
     const $ = Cheerio.load(html);
@@ -13,7 +15,7 @@ let outputPath='';
     return matches || [];
   }
 
-  
+
   /////// create file and write the emails scraped
 const Writer=(emails)=>{
 try{
