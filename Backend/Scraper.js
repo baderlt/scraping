@@ -13,6 +13,7 @@ let outputPath='';
     return matches || [];
   }
 
+  
   /////// create file and write the emails scraped
 const Writer=(emails)=>{
 try{
