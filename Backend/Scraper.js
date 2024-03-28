@@ -34,7 +34,7 @@ return false;
 }
 
 const googleSearch=async(req,res)=>{
-  
+
     try{
     if(! req.body?.url) return res.status(400).json({message:'Url Not Found .. !'});
     const { url }=req.body;
@@ -63,6 +63,7 @@ const googleSearch=async(req,res)=>{
 
   return res.status(200).json({message:'success',resultat:emails,file:outputPath});
 
+  
 }catch(e){
   console.log(e);
     res.status(500).json({message:'Server Error ty again ..!'})
