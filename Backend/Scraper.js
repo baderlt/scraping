@@ -48,6 +48,7 @@ const googleSearch=async(req,res)=>{
     // let date=new Date().toISOString().replace(/[:.]/g, '-');
     // let path='screenshot'+date+'.png';
     // await page.screenshot({path });
+    
     let html = await page.evaluate(() => {
       const results = document.querySelectorAll('body');
       return Array.from(results, (result) => result.textContent);
