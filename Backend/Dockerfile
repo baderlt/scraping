@@ -3,14 +3,14 @@ FROM ghcr.io/puppeteer/puppeteer:22.6.0
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
-# Create a non-root user and group
-RUN addgroup -S nodejs && adduser -S -G nodejs nodejs
-
-# Set the working directory and permissions
+# Set the working directory
 WORKDIR /usr/src/app
-RUN chown -R nodejs:nodejs /usr/src/app
 
-USER nodejs
+# Change permissions of the working directory to allow the node user to write to it
+RUN chown -R node /usr/src/app
+
+# Switch to the node user
+USER node
 
 COPY package*.json ./
 RUN npm ci
