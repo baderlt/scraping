@@ -1,10 +1,10 @@
 FROM ghcr.io/puppeteer/puppeteer:22.6.0
 
-# Create a non-root user and group
-RUN groupadd -r nodejs && useradd -m -r -g nodejs nodejs
-
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+
+# Create a non-root user and group
+RUN addgroup -S nodejs && adduser -S -G nodejs nodejs
 
 # Set the working directory and permissions
 WORKDIR /usr/src/app
