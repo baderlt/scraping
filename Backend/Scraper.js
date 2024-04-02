@@ -5,6 +5,7 @@ let outputPath = "";
 
 ///////// scrape emails from html
 const ScrapEmails = (html) => {
+  try{
   const $ = Cheerio.load(html);
   const bodyText = $("body").text();
   const emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
@@ -12,11 +13,15 @@ const ScrapEmails = (html) => {
   matches = new Set(matches);
   Writer(matches);
   return matches || [];
-};
+  }catch(e)
+{
+console.log('error in scarping email from html ... ')
+console.log(e);
+}};
 
 /////// create file and write the emails scraped
 const Writer = (emails) => {
-  
+
   try {
     let date = new Date().toISOString().replace(/[:.]/g, "-");
     outputPath = "output" + date + ".txt";
@@ -33,7 +38,9 @@ const Writer = (emails) => {
     }
     return false;
   } catch (e) {
+    console.log('thr error in writing ... ')
     console.log(e);
+    res.status(500).json({ message: "Server Error ty again ..!" });
   }
 };
 
@@ -86,6 +93,7 @@ const googleSearch = async (req, res) => {
       .status(200)
       .json({ message: "success", resultat: emails, file: outputPath });
   } catch (e) {
+    console.log('error in puppeteer ... ')
     console.log(e);
     res.status(500).json({ message: "Server Error ty again ..!" });
   }
