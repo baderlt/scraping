@@ -16,6 +16,7 @@ const ScrapEmails = (html) => {
 
 /////// create file and write the emails scraped
 const Writer = (emails) => {
+  
   try {
     let date = new Date().toISOString().replace(/[:.]/g, "-");
     outputPath = "output" + date + ".txt";
@@ -38,6 +39,7 @@ const Writer = (emails) => {
 
 ////function for scraping emails with pappeter
 const googleSearch = async (req, res) => {
+
   try {
     if (!req.body?.url)
       return res.status(400).json({ message: "Url Not Found .. !" });
