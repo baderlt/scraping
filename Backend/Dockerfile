@@ -10,7 +10,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 # Set the working directory and permissions
 WORKDIR /usr/src/app
 
-RUN chmod 777 /usr/src/app/files
+RUN chmod 777 workdir/files
 
 
 
