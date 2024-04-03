@@ -1,5 +1,6 @@
 FROM ghcr.io/puppeteer/puppeteer:22.6.0
 
+USER root
 # Create a non-root user and group
 RUN useradd -ms /bin/sh myuser
 
