@@ -15,7 +15,7 @@ RUN mkdir -p /files && chmod 777 /files
 USER myuser
 
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 
 CMD [ "node", "index.js" ]
