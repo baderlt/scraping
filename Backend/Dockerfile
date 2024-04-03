@@ -2,7 +2,7 @@ FROM ghcr.io/puppeteer/puppeteer:22.6.0
 
 USER root
 # Create a non-root user and group
-RUN useradd -ms /bin/sh myuser
+RUN useradd -ms /bin/bash myuser
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
@@ -15,7 +15,11 @@ RUN mkdir -p /files && chmod 777 /files
 USER myuser
 
 COPY package*.json ./
-RUN npm install
+
+RUN npm cache clean --force
+
+RUN  npm install
+
 COPY . .
 
 CMD [ "node", "index.js" ]
