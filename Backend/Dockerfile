@@ -12,13 +12,15 @@ WORKDIR /usr/src/app
 
 RUN mkdir -p /files && chmod 777 /files
 
-USER myuser
+
 
 COPY package*.json ./
 
 RUN npm cache clean --force
 
 RUN  npm install
+
+USER myuser
 
 COPY . .
 
