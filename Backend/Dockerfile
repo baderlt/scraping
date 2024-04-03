@@ -1,7 +1,7 @@
 FROM ghcr.io/puppeteer/puppeteer:22.6.0
 
 # Create a non-root user and group
-RUN useradd -ms /bin/bash myuser
+RUN useradd -ms /dirbin/sh myuser
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
     PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
