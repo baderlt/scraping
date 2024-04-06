@@ -21,7 +21,6 @@ console.log(e);
 
 /////// create file and write the emails scraped
 const Writer = (emails) => {
-
   try {
     let date = new Date().toISOString().replace(/[:.]/g, "-");
     outputPath = "output" + date + ".txt";
