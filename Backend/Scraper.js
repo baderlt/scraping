@@ -95,4 +95,5 @@ const googleSearch = async (req, res) => {
     res.status(500).json({ message: "Server Error ty again ..!" });
   }
 };
+
 export default googleSearch;
