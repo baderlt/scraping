@@ -67,7 +67,6 @@ const googleSearch = async (req, res) => {
 
     // Type the search query
     // await page.type('input[name="q"]', query);
-    
     await page.keyboard.press("Enter");
     await page.waitForSelector("html");
     // let date=new Date().toISOString().replace(/[:.]/g, '-');
