@@ -11,9 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.post('/api/EmailScraping',googleSearch);
 app.get('/api/downloadfile/:file',download)
-app.get('/api/test',async (req,res)=>{
 
-})
 app.listen(PORT,(req,res)=>{
     console.log(`server runing on port:${PORT} `)
 })
