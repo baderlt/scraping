@@ -45,7 +45,6 @@ const Writer = (emails) => {
 
 ////function for scraping emails with pappeter
 const googleSearch = async (req, res) => {
-
   try {
     if (!req.body?.url)
       return res.status(400).json({ message: "Url Not Found .. !" });
