@@ -43,7 +43,6 @@ const Writer = (emails) => {
   }
 };
 
-
 ////function for scraping emails with pappeter
 const googleSearch = async (req, res) => {
   try {
