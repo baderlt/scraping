@@ -9,7 +9,6 @@ const success = () =>toast.success('Successfully scraping');
 const error = () =>toast.error('Server Error Try Again .. !');
 
 function App() {
-
   const url = useRef();
   const [Emails, seteamils] = useState([]);
   const [filename, setfilename] = useState("");
