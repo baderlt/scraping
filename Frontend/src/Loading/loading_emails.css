@@ -15,7 +15,8 @@
     height: 20px;
     margin-right: 6px;
   }
-  
+
+
   .banter-loader__box:before {
     content: "";
     position: absolute;
