@@ -20,5 +20,4 @@ const download = (req, res) => {
   const readStream = fs.createReadStream(filePath);
   readStream.pipe(res);
 };
-
 export default download;
