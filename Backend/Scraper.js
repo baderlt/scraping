@@ -19,6 +19,7 @@ console.log('error in scarping email from html ... ')
 console.log(e);
 }};
 
+
 /////// create file and write the emails scraped
 const Writer = (emails) => {
   try {
