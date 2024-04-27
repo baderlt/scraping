@@ -59,7 +59,6 @@ function App() {
         </div>
         <button onClick={handelScraping}>Start Scraping</button>
       </div>
-
       <div className="relative mt-10">
         {loading ? <Loding_Emails /> : <ListeEmails filename={filename} Emails={Emails} />}
       </div>
