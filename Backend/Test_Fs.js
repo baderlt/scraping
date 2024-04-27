@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs, { read, readFile } from "fs";
 //// write in  file with fs
 let content=['bader','amine','yassin'];
 // var  writeStram=fs.createWriteStream('test.txt',{flags:'a'});
@@ -21,19 +21,19 @@ let content=['bader','amine','yassin'];
 ///// read file with fs 
 
 // Create a readable stream
-var reader = fs.createReadStream('test.txt', 'utf-8');
+// var reader = fs.createReadStream('test.txt', 'utf-8');
 
-// Event listener for when data is available
-reader.on('data', function(chunk) {
-    // Split the chunk by lines
-    var lines = chunk.split('\n');
-    // Loop through each line
-    lines.forEach(function(line) {
-        console.log(line); // Process each line as needed
-    });
-});
-
-// Event listener for when all data has been read
-reader.on('end', function() {
-    console.log('End of file');
-});
+// reader.on('data',(lines)=>{
+//     let lines_=lines.split('\n');
+//     lines_.forEach((line)=>{console.log(line)})
+// })
+// reader.on('end',()=>{
+//     console.log('end')
+// })
+fs.readFile('test.txt','utf-8',(err,data)=>{
+if(err){
+    console.log(err);
+}else{
+    console.log(data);
+}
+})
