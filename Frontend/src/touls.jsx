@@ -1,3 +1,3 @@
-// export const BaseUrl='http://localhost:5000/api';
+export const BaseUrl='http://localhost:5000/api';
 ///// for server render 
-export const BaseUrl='https://email-scraper-skz9.onrender.com/api';
+// export const BaseUrl='https://scraping-bl3j.onrender.com/api';
