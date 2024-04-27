@@ -30,6 +30,7 @@ let content=['bader','amine','yassin'];
 // reader.on('end',()=>{
 //     console.log('end')
 // })
+
 fs.readFile('test.txt','utf-8',(err,data)=>{
 if(err){
     console.log(err);
